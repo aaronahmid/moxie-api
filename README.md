@@ -15,7 +15,7 @@ Before starting, ensure that you have the following installed on your machine:
 ### Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/moxie-api.git
+git clone https://github.com/aaronahmid/moxie-api
 cd moxie-api
 ```
 
@@ -46,14 +46,6 @@ This will:
 - Start the PostgreSQL database.
 - Start the Django web application.
 
-### Create the Database:
-
-After the containers are up and running, open a new terminal and run the following command to apply the migrations and create the initial database structure:
-
-```bash
-docker compose exec moxie_backend python manage.py migrate
-```
-
 ### Create a Superuser (Optional):
 
 If you need access to the Django admin, create a superuser by running the following command:
@@ -64,8 +56,8 @@ docker compose exec moxie_backend python manage.py createsuperuser
 
 ## Access the Application:
 
-- The Django app will be running at [http://localhost:8000](http://localhost:8000) (or the port you specified in your `.env` file as `DJANGO_PORT`).
-- The Django admin will be available at [http://localhost:8000/admin](http://localhost:8000/admin).
+- The Django app will be running at [http://localhost:8080](http://localhost:8080) (or the port you specified in your `.env` file as `DJANGO_PORT`).
+- The Django admin will be available at [http://localhost:8000/admin](http://localhost:8080/admin).
 
 ## API Usage
 

@@ -162,51 +162,51 @@ SWAGGER_SETTINGS = {
     }
 }
 
-LOG_DIR = os.path.join(BASE_DIR, "logs")
+# LOG_DIR = os.path.join(BASE_DIR, "logs")
 
-# Ensure the logs directory exists
-if not os.path.exists(LOG_DIR):
-    os.makedirs(LOG_DIR)
+# # Ensure the logs directory exists
+# if not os.path.exists(LOG_DIR):
+#     os.makedirs(LOG_DIR)
 
-# Logging configuration for errors
-LOG_FILE_ERROR = os.path.join(LOG_DIR, "error.log")
+# # Logging configuration for errors
+# LOG_FILE_ERROR = os.path.join(LOG_DIR, "error.log")
 
-# Logging configuration for access logs
-LOG_FILE_ACCESS = os.path.join(LOG_DIR, "access.log")
+# # Logging configuration for access logs
+# LOG_FILE_ACCESS = os.path.join(LOG_DIR, "access.log")
 
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "verbose": {
-            "format": "%(asctime)s [%(levelname)s] %(message)s",
-            "datefmt": "%Y-%m-%d %H:%M:%S",
-        },
-    },
-    "handlers": {
-        "error_file": {
-            "level": "ERROR",
-            "class": "logging.FileHandler",
-            "filename": LOG_FILE_ERROR,
-            "formatter": "verbose",
-        },
-        "access_file": {
-            "level": "INFO",
-            "class": "logging.FileHandler",
-            "filename": LOG_FILE_ACCESS,
-            "formatter": "verbose",
-        },
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["error_file"],
-            "level": "ERROR",
-            "propagate": True,
-        },
-        "django.server": {
-            "handlers": ["access_file"],
-            "level": "INFO",
-            "propagate": False,
-        },
-    },
-}
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "formatters": {
+#         "verbose": {
+#             "format": "%(asctime)s [%(levelname)s] %(message)s",
+#             "datefmt": "%Y-%m-%d %H:%M:%S",
+#         },
+#     },
+#     "handlers": {
+#         "error_file": {
+#             "level": "ERROR",
+#             "class": "logging.FileHandler",
+#             "filename": LOG_FILE_ERROR,
+#             "formatter": "verbose",
+#         },
+#         "access_file": {
+#             "level": "INFO",
+#             "class": "logging.FileHandler",
+#             "filename": LOG_FILE_ACCESS,
+#             "formatter": "verbose",
+#         },
+#     },
+#     "loggers": {
+#         "django": {
+#             "handlers": ["error_file"],
+#             "level": "ERROR",
+#             "propagate": True,
+#         },
+#         "django.server": {
+#             "handlers": ["access_file"],
+#             "level": "INFO",
+#             "propagate": False,
+#         },
+#     },
+# }
