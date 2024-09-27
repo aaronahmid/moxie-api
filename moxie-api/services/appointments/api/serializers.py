@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from core.models import MedSpa
+from core.models import Appointment
 
 
-class MedSpaSerializer(serializers.ModelSerializer):
+class AppointmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MedSpa
+        model = Appointment
         fields = "__all__"

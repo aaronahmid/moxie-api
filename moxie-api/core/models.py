@@ -53,7 +53,7 @@ class Appointment(models.Model):
         MedSpa, on_delete=models.CASCADE, related_name="appointments"
     )
     services = models.ManyToManyField(
-        Service, related_name="appointments"
+        Service, related_name="appointments", blank=True
     )  # Many-to-many relationship with Service
     start_time = models.DateTimeField()
     status = models.CharField(

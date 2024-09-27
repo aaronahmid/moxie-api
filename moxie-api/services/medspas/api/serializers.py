@@ -7,6 +7,7 @@ class ServiceSerializer(serializers.ModelSerializer):
         model = Service
         fields = "__all__"
 
+
 class MedSpaSerializer(serializers.ModelSerializer):
 
     class Meta:
