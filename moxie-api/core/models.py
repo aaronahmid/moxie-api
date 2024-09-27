@@ -18,7 +18,7 @@ class MedSpa(models.Model):
 
 class Service(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4)
-    medspa = models.ForeignKey(
+    medspa = models.OneToOneField(
         MedSpa, on_delete=models.CASCADE, related_name="services"
     )
     name = models.CharField(max_length=100)

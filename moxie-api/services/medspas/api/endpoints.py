@@ -7,7 +7,6 @@ from rest_framework.decorators import action
 from rest_framework import status
 
 
-# MedSpa ViewSet
 class MedSpaViewSet(viewsets.ViewSet, viewsets.ModelViewSet):
     queryset = MedSpa.objects.all()
     serializer_class = MedSpaSerializer

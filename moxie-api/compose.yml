@@ -1,19 +1,19 @@
 services:
-  moxie_db:
-    restart: always
-    container_name: moxie-db
-    image: postgres:latest
-    environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_NAME=${POSTGRES_NAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    ports:
-      - "5432:5432"
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_NAME}"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
+  # moxie_db:
+  #   restart: always
+  #   container_name: moxie-db
+  #   image: postgres:latest
+  #   environment:
+  #     - POSTGRES_USER=${POSTGRES_USER}
+  #     - POSTGRES_NAME=${POSTGRES_NAME}
+  #     - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+  #   ports:
+  #     - "5432:5432"
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_NAME}"]
+  #     interval: 5s
+  #     timeout: 5s
+  #     retries: 5
 
   moxie_backend:
     build: .
