@@ -18,14 +18,14 @@ services:
   moxie_backend:
     build: .
     entrypoint: /entrypoint.sh
-    command: bash -c "python manage.py runserver 0.0.0.0:${DJANGO_PORT}"
+    command: bash -c "python manage.py runserver 127.0.0.1:${DJANGO_PORT}"
     ports:
       - "8000:8000"
     environment:
       - ENV=dev
-    depends_on:
-      moxie_db:
-        condition: service_healthy
+    # depends_on:
+    #   moxie_db:
+    #     condition: service_healthy
     env_file:
       - .env
     restart: on-failure

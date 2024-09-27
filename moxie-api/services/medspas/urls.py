@@ -7,7 +7,7 @@ from django.urls import path, include
 app_name = "medaspas"
 
 router = DefaultRouter()
-router.register("", MedSpaViewSet, basename="medspas")
+router.register("medspas", MedSpaViewSet, basename="medspas")
 router.register("services", ServiceViewSet, basename="services")
 
 urlpatterns = []

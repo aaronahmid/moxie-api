@@ -51,7 +51,7 @@ This will:
 After the containers are up and running, open a new terminal and run the following command to apply the migrations and create the initial database structure:
 
 ```bash
-docker compose exec web python manage.py migrate
+docker compose exec moxie_backend python manage.py migrate
 ```
 
 ### Create a Superuser (Optional):
@@ -59,7 +59,7 @@ docker compose exec web python manage.py migrate
 If you need access to the Django admin, create a superuser by running the following command:
 
 ```bash
-docker compose exec web python manage.py createsuperuser
+docker compose exec moxie_backend python manage.py createsuperuser
 ```
 
 ## Access the Application:
@@ -92,7 +92,7 @@ curl -X POST http://localhost:8000/api/services/ \
     "description": "A relaxing facial service",
     "price": "100.00",
     "duration": "01:00:00",
-    "medspa": 1
+    "medspa": "c4d813d9-2be4-4a2d-8d23-7f392dcd66b9"
 }'
 ```
 
@@ -105,8 +105,8 @@ curl -X POST http://localhost:8000/api/appointments/ \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <your_token>" \
 -d '{
-    "medspa": 1,
-    "services": [1, 2],
+    "medspa": "c4d813d9-2be4-4a2d-8d23-7f392dcd66b9",
+    "services": ["c4d813d9-2be4-4a2d-8d23-7f392dcd66b9", "c4d813d9-2be4-4a2d-8d23-7f392dcd66b9"],
     "start_time": "2024-10-10T15:00:00Z",
     "status": "scheduled"
 }'

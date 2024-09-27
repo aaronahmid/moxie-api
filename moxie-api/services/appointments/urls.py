@@ -7,7 +7,7 @@ from django.urls import path, include
 app_name = "appointments"
 
 router = DefaultRouter()
-router.register("", AppointmentViewSet, basename="appointments")
+router.register("appointments", AppointmentViewSet, basename="appointments")
 
 urlpatterns = []
 urlpatterns += router.urls
