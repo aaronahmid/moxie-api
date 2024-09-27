@@ -17,10 +17,10 @@ services:
 
   moxie_backend:
     build: .
-    entrypoint: /entrypoint.sh
+    entrypoint: ./entrypoint.sh
     command: bash -c "python manage.py runserver 127.0.0.1:${DJANGO_PORT}"
     ports:
-      - "8000:8000"
+      - "8080:8080"
     environment:
       - ENV=dev
     # depends_on:
