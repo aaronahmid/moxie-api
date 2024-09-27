@@ -26,7 +26,9 @@ Create a `.env` file at the root of your project and add the necessary environme
 ```bash
 POSTGRES_USER=myuser
 POSTGRES_PASSWORD=mypassword
-POSTGRES_NAME=mydb
+POSTGRES_NAME=moxie_db
+POSTGRES_HOST=moxie
+POSTGRES_PORT=5432
 DJANGO_PORT=8000
 ```
 
@@ -54,10 +56,23 @@ If you need access to the Django admin, create a superuser by running the follow
 docker compose exec moxie_backend python manage.py createsuperuser
 ```
 
+### If Docker Fails
+
+run manually
+
+```bash
+pip install requirements.txt
+```
+
+```bash
+python manage.py runserver
+```
+
+
 ## Access the Application:
 
-- The Django app will be running at [http://localhost:8080](http://localhost:8080) (or the port you specified in your `.env` file as `DJANGO_PORT`).
-- The Django admin will be available at [http://localhost:8000/admin](http://localhost:8080/admin).
+- The Django app will be running at [http://localhost:8080](http://localhost:8000) (or the port you specified in your `.env` file as `DJANGO_PORT`).
+- The Django admin will be available at [http://localhost:8000/admin](http://localhost:8000/admin).
 
 ## API Usage
 
