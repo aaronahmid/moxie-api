@@ -27,5 +27,5 @@ services:
       moxie_db:
         condition: service_healthy
     env_file:
-      - ./config/envs/.env.dev
+      - .env
     restart: on-failure

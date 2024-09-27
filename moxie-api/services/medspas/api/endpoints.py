@@ -11,7 +11,7 @@ from rest_framework import status
 class MedSpaViewSet(viewsets.ViewSet, viewsets.ModelViewSet):
     queryset = MedSpa.objects.all()
     serializer_class = MedSpaSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny] # [permissions.IsAuthenticated]
     # access_policy
     lookup_field = "id"
     http_method_names = ["get", "post", "head", "delete", "put"]
@@ -52,7 +52,7 @@ class MedSpaViewSet(viewsets.ViewSet, viewsets.ModelViewSet):
 class ServiceViewSet(viewsets.ModelViewSet):
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]  # [permissions.IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
         return super().create(request, *args, **kwargs)

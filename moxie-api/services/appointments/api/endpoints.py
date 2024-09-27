@@ -7,7 +7,7 @@ from services.appointments.api.serializers import AppointmentSerializer
 class AppointmentViewSet(viewsets.ModelViewSet):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny] # [permissions.IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
         return super().create(request, *args, **kwargs)
