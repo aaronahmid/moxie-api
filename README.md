@@ -96,7 +96,7 @@ curl -X POST http://localhost:8000/api/services/ \
 }'
 ```
 
-### 3. Create a New Appointment
+### 4. Create a New Appointment
 
 Create a new appointment and associate it with multiple services:
 
