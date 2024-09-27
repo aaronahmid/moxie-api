@@ -30,6 +30,7 @@ POSTGRES_NAME=moxie_db
 POSTGRES_HOST=moxie
 POSTGRES_PORT=5432
 DJANGO_PORT=8000
+SECRET_KEY=## generate and add secret key
 ```
 
 These values will be used for setting up the PostgreSQL database and the Django app.
