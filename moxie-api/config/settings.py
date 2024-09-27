@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from decouple import config as getenv
 import os
-
+# Optional: Configure JWT token expiration and refresh settings
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,9 +138,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-# Optional: Configure JWT token expiration and refresh settings
-from datetime import timedelta
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),  # Token expires in 30 minutes
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),     # Refresh token expires in 1 day
@@ -156,7 +154,6 @@ CACHES = {
         "LOCATION": "unique-snowflake",
     },
 }
-
 
 
 SWAGGER_SETTINGS = {
