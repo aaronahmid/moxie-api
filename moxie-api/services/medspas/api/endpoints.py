@@ -6,6 +6,7 @@ from .serializers import MedSpaSerializer, ServiceSerializer
 from rest_framework.decorators import action
 from rest_framework import status
 
+
 # MedSpa ViewSet
 class MedSpaViewSet(viewsets.ViewSet, viewsets.ModelViewSet):
     queryset = MedSpa.objects.all()
@@ -38,6 +39,14 @@ class MedSpaViewSet(viewsets.ViewSet, viewsets.ModelViewSet):
         response = Response(data=data, status=status.HTTP_200_OK)
         return response
 
+    @action(detail=True, methods=["get"])
+    def services(self, request, *args, **kwargs):
+        medspa = self.get_object()
+        appointments = Service.objects.filter(medspa=medspa)
+        data = ServiceSerializer(appointments, many=True)
+        response = Response(data=data, status=status.HTTP_200_OK)
+        return response
+
 
 # Service ViewSet
 class ServiceViewSet(viewsets.ModelViewSet):
@@ -56,6 +65,3 @@ class ServiceViewSet(viewsets.ModelViewSet):
 
     def retreive(self, request, *args, **kwargs):
         return super().retrieve(request, *args, **kwargs)
-
-
-    

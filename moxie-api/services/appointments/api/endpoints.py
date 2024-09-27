@@ -1,6 +1,8 @@
 from rest_framework import viewsets, permissions
 from rest_framework.response import Response
-from core.models import MedSpa, Service, Appointment
+from core.models import Appointment
+from services.appointments.api.serializers import AppointmentSerializer
+
 
 class AppointmentViewSet(viewsets.ModelViewSet):
     queryset = Appointment.objects.all()
